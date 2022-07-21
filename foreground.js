@@ -13,7 +13,7 @@ const STYLES = {
   borderRadius: "50%",
   outline: "none",
   border: "none",
-  //   zIndex: "9999",
+  zIndex: "9999",
   userSelect: "none",
   cursor: "pointer",
 };
