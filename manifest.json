@@ -1,0 +1,17 @@
+{
+  "name": "Back to top",
+  "description": "A extension to inject back-to-top button in every website.",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["*://*/*"]
+}
