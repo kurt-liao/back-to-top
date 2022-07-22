@@ -4,7 +4,7 @@ const STYLES = {
   color: '#000',
   width: '60px',
   height: '60px',
-  display: 'flex',
+  display: 'none',
   justifyContent: 'center',
   alignItems: 'center',
   position: 'fixed',
@@ -46,6 +46,17 @@ if (HAS_SCROLLBAR) {
       top: 0,
       behavior: 'smooth'
     })
+  }
+
+  window.onscroll = function scroll() {
+    if (
+      document.body.scrollTop > 30 ||
+      document.documentElement.scrollTop > 30
+    ) {
+      ele.style.display = 'flex'
+    } else {
+      ele.style.display = 'none'
+    }
   }
 
   const svg = document.createElementNS(SVG_NS, 'svg')

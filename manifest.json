@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "manifest_version": 3,
   "icons": {
-    "16": "assets/logo.png",
-    "32": "assets/logo.png",
-    "48": "assets/logo.png",
-    "128": "assets/logo.png"
+    "16": "src/assets/logo.png",
+    "32": "src/assets/logo.png",
+    "48": "src/assets/logo.png",
+    "128": "src/assets/logo.png"
   },
   "background": {
-    "service_worker": "js/background.js"
+    "service_worker": "src/js/background.js"
   },
   "permissions": ["scripting", "tabs"],
   "host_permissions": ["*://*/*"]
