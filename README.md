@@ -2,6 +2,11 @@
 
 A chrome extension that inject a back-to-top button in every websites.
 
+## Important
+
+The source is release, but the extension is still review by Google.
+For the reason, you can clone this repo and load unpacked extension in **chrome://extensions**
+
 ## Motivation
 
 Sometimes when I reading some articles from some web, there's no back-to-top button for me to scroll top instantly.
