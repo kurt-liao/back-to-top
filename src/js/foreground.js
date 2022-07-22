@@ -62,7 +62,6 @@ if (HAS_SCROLLBAR) {
 
   window.addEventListener('scroll', () => {
     throttle(() => {
-      console.log('scroll')
       if (
         document.body.scrollTop > 30 ||
         document.documentElement.scrollTop > 30
