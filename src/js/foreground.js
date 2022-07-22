@@ -1,31 +1,3 @@
-const HAS_SCROLLBAR = window.innerWidth > document.body.clientWidth
-const STYLES = {
-  backgroundColor: '#ffc107',
-  color: '#000',
-  width: '60px',
-  height: '60px',
-  display: 'none',
-  justifyContent: 'center',
-  alignItems: 'center',
-  position: 'fixed',
-  bottom: '30px',
-  right: '20px',
-  borderRadius: '50%',
-  outline: 'none',
-  border: 'none',
-  zIndex: '2147483647',
-  userSelect: 'none',
-  cursor: 'pointer'
-}
-const SVG_NS = 'http://www.w3.org/2000/svg'
-const SVG_PATH = 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'
-const SVG_ATTRS = {
-  height: '26',
-  width: '26',
-  viewBox: '0 0 26 26',
-  fill: 'currentColor'
-}
-
 function setCss(ele, styles) {
   for (const key in styles) {
     ele.style[key] = styles[key]
@@ -38,7 +10,11 @@ function setAttrs(ele, attrs) {
   }
 }
 
-let throttlePause
+function hasScrollbar() {
+  return window.innerWidth > document.body.clientWidth
+}
+
+var throttlePause
 function throttle(cb, delay) {
   if (throttlePause) return
 
@@ -50,9 +26,40 @@ function throttle(cb, delay) {
   }, delay)
 }
 
-if (HAS_SCROLLBAR) {
+var installed
+if (hasScrollbar() && !installed) {
+  const manifestData = chrome.runtime.getManifest()
+
+  const styles = {
+    backgroundColor: '#ffc107',
+    color: '#000',
+    width: '60px',
+    height: '60px',
+    display: 'none',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'fixed',
+    bottom: '30px',
+    right: '20px',
+    borderRadius: '50%',
+    outline: 'none',
+    border: 'none',
+    zIndex: '2147483647',
+    userSelect: 'none',
+    cursor: 'pointer'
+  }
+  const svgNs = 'http://www.w3.org/2000/svg'
+  const svgPath = 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'
+  const svgAttrs = {
+    height: '26',
+    width: '26',
+    viewBox: '0 0 26 26',
+    fill: 'currentColor'
+  }
+
   const ele = document.createElement('div')
-  setCss(ele, STYLES)
+  ele.id = `back-to-top-v${manifestData.version}`
+  setCss(ele, styles)
   ele.onclick = function scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -73,13 +80,15 @@ if (HAS_SCROLLBAR) {
     }, 250)
   })
 
-  const svg = document.createElementNS(SVG_NS, 'svg')
-  setAttrs(svg, SVG_ATTRS)
+  const svg = document.createElementNS(svgNs, 'svg')
+  setAttrs(svg, svgAttrs)
 
-  const path = document.createElementNS(SVG_NS, 'path')
-  path.setAttributeNS(null, 'd', SVG_PATH)
+  const path = document.createElementNS(svgNs, 'path')
+  path.setAttributeNS(null, 'd', svgPath)
 
   svg.appendChild(path)
   ele.appendChild(svg)
   document.body.appendChild(ele)
+
+  installed = true
 }
