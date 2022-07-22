@@ -38,6 +38,18 @@ function setAttrs(ele, attrs) {
   }
 }
 
+let throttlePause
+function throttle(cb, delay) {
+  if (throttlePause) return
+
+  throttlePause = true
+
+  setTimeout(() => {
+    cb && cb()
+    throttlePause = false
+  }, delay)
+}
+
 if (HAS_SCROLLBAR) {
   const ele = document.createElement('div')
   setCss(ele, STYLES)
@@ -48,16 +60,19 @@ if (HAS_SCROLLBAR) {
     })
   }
 
-  window.onscroll = function scroll() {
-    if (
-      document.body.scrollTop > 30 ||
-      document.documentElement.scrollTop > 30
-    ) {
-      ele.style.display = 'flex'
-    } else {
-      ele.style.display = 'none'
-    }
-  }
+  window.addEventListener('scroll', () => {
+    throttle(() => {
+      console.log('scroll')
+      if (
+        document.body.scrollTop > 30 ||
+        document.documentElement.scrollTop > 30
+      ) {
+        ele.style.display = 'flex'
+      } else {
+        ele.style.display = 'none'
+      }
+    }, 250)
+  })
 
   const svg = document.createElementNS(SVG_NS, 'svg')
   setAttrs(svg, SVG_ATTRS)
