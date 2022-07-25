@@ -2,10 +2,9 @@
 
 A chrome extension that inject a back-to-top button in every web page.
 
-## ❗Important
+## Install
 
-The source is release, but the extension is still review by Google.
-For the reason, you can clone this repo and load unpacked extension in **chrome://extensions** and use it locally.
+Extension link is [here](https://chrome.google.com/webstore/detail/back-to-top/nealmcceckopfhgbdeniofkpdehmjicc?hl=zh-TW), just install!
 
 ## Motivation
 
