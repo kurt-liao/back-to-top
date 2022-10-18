@@ -18,7 +18,7 @@ For the inconvenient reason, I create this extension that inject a back-to-top b
 - [ ] Support custom styles of button settings from option page.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors
