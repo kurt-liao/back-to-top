@@ -30,7 +30,7 @@ For the inconvenient reason, I create this extension that inject a back-to-top b
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://blog.kurtstories.com/"><img src="https://avatars.githubusercontent.com/u/32745146?v=4?s=100" width="100px;" alt="Kurt"/><br /><sub><b>Kurt</b></sub></a><br /><a href="https://github.com/kurt-liao/back-to-top/commits?author=kurt-liao" title="Code">💻</a> <a href="https://github.com/kurt-liao/back-to-top/commits?author=kurt-liao" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://blog.kurtstories.com/"><img src="https://avatars.githubusercontent.com/u/32745146?v=4?s=100" width="100px;" alt="Kurt"/><br /><sub><b>Kurt</b></sub></a><br /><a href="https://github.com/kurt-liao/back-to-top/commits?author=kurt-liao" title="Code">💻</a> <a href="https://github.com/kurt-liao/back-to-top/commits?author=kurt-liao" title="Documentation">📖</a> <a href="#design-kurt-liao" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
